@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Mascotas</string>
+    <string name="action_settings">Configuración</string>
+    <string name="title_activity_login">Login</string>
+    <string name="hello_round">Hello Round World!</string>
+    <string name="hello_square">Hello Square World!</string>
+</resources>
