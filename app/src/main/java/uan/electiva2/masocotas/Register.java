@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import uan.electiva2.masocotas.DataAccess.UserManager;
 import uan.electiva2.masocotas.entities.LogicException;
 import uan.electiva2.masocotas.entities.User;
 
@@ -64,7 +65,9 @@ public class Register extends AppCompatActivity {
                 if(entity == null)
                     return;
                 try {
-                    Data.getDataSingleton().addUser(entity);
+                    UserManager userManager = new UserManager(getApplicationContext());
+                    userManager.insertUser(entity);
+                    userManager.close();
                 }catch(LogicException ex){
                     userText.setError(ex.getMessage());;
                 }
@@ -101,6 +104,10 @@ public class Register extends AppCompatActivity {
             isValid = false;
         }
         if (TextUtils.isEmpty(entity.getEmail())) {
+            emailText.setError("El correo electrónico es obligatorio.");
+            focus = userText;
+            isValid = false;
+        }else if(entity.getEmail().contains("@") == false){
             emailText.setError("El correo electrónico es obligatorio.");
             focus = userText;
             isValid = false;

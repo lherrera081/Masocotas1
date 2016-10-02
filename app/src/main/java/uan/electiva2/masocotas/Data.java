@@ -21,6 +21,16 @@ public class Data {
     public Data()
     {
         users= new ArrayList<User>();
+        User user = new User();
+        user.setUserName("test");
+        user.setName("TEST");
+        user.setLastName("TEST");
+        user.setEmail("test@test.com");
+        user.setPassword("test");
+        try {
+            addUser(user);
+        }catch(LogicException ex){
+        }
     }
 
     public void addUser(User user) throws LogicException {

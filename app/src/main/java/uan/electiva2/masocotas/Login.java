@@ -1,6 +1,7 @@
 package uan.electiva2.masocotas;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -9,9 +10,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import uan.electiva2.masocotas.DataAccess.UserManager;
 import uan.electiva2.masocotas.entities.Constants;
 import uan.electiva2.masocotas.entities.User;
 
@@ -82,10 +86,17 @@ public class Login extends AppCompatActivity {
     }
     ///Método encargado de hacer la autenticación
     private boolean _login(String userName, String password) {
-        User user = Data.getDataSingleton().getUserByUsername(userName);
-        if(user == null)
+        try {
+            try (UserManager userManager = new UserManager(getApplicationContext())) {
+                User user = userManager.getUser(userName, password);
+                if (user == null)
+                    return false;
+                return true;
+            }
+        }catch (SQLiteException e) {
+            e.printStackTrace();
             return false;
-        return true;
+        }
     }
 
 }

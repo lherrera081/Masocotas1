@@ -69,8 +69,8 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ver mis registros"
-            android:id="@+id/getIntoButton"
+            android:text="Ver mis mascotas"
+            android:id="@+id/loadPetsButton"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 </RelativeLayout>
