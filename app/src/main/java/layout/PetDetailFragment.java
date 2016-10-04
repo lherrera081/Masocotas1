@@ -136,6 +136,7 @@ public class PetDetailFragment extends Fragment {
             switch (requestCode) {
                 case PetsFragment.REQUEST_UPDATE_DELETE_PET:
                     loadPet();
+                    getActivity().setResult(Activity.RESULT_OK);
                     break;
             }
         }

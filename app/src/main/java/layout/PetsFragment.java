@@ -2,7 +2,9 @@ package layout;
 
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -30,7 +32,8 @@ public class PetsFragment extends Fragment {
 
     public static final int REQUEST_UPDATE_DELETE_PET = 100;
     public static final int REQUEST_ADD_PET = 101;
-    private String mLawyerId;
+    private String userId;
+
 
     private CollapsingToolbarLayout mCollapsingView;
     private ImageView mAvatar;
@@ -53,6 +56,8 @@ public class PetsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_pets, container, false);
+        SharedPreferences sharedpreferences = getActivity().getSharedPreferences(Constants.MY_REFERENCES, Context.MODE_PRIVATE);
+        userId = sharedpreferences.getString(Constants.USER_ID,"0");
         // Referencias UI
         petsList = (ListView) root.findViewById(R.id.pets_list);
         petsAdapter = new PetsCursorAdapter(getActivity(), null);
@@ -102,13 +107,12 @@ public class PetsFragment extends Fragment {
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (Activity.RESULT_OK == resultCode) {
+            loadPets();
             switch (requestCode) {
                 case REQUEST_UPDATE_DELETE_PET:
-                    loadPets();
                     break;
                 case REQUEST_ADD_PET:
                     showSuccessfullSavedMessage();
-                    loadPets();
                     break;
             }
         }
@@ -117,7 +121,7 @@ public class PetsFragment extends Fragment {
 
         @Override
         protected Cursor doInBackground(Void... voids) {
-            return petsManager.getAllPets();
+            return petsManager.getPetsByUser(userId);
         }
 
         @Override
@@ -126,12 +130,18 @@ public class PetsFragment extends Fragment {
                 petsAdapter.swapCursor(cursor);
             } else {
                 // Mostrar empty state
-
+                showEmptyMessage();
             }
             petsManager.close();
         }
 
     }
+
+    private void showEmptyMessage() {
+        Toast.makeText(getActivity(),
+                "No tiene mascotas registradas", Toast.LENGTH_SHORT).show();
+    }
+
     private void showSuccessfullSavedMessage() {
         Toast.makeText(getActivity(),
                 "Mascota guardada correctamente", Toast.LENGTH_SHORT).show();

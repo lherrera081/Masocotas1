@@ -1,6 +1,8 @@
 package uan.electiva2.masocotas;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.sqlite.SQLiteException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -91,6 +93,11 @@ public class Login extends AppCompatActivity {
                 User user = userManager.getUser(userName, password);
                 if (user == null)
                     return false;
+                SharedPreferences sharedpreferences = getSharedPreferences(Constants.MY_REFERENCES, Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedpreferences.edit();
+                editor.putString(Constants.USER_NAME, userName);
+                editor.putString(Constants.USER_ID, String.valueOf(user.getUserId()));
+                editor.commit();
                 return true;
             }
         }catch (SQLiteException e) {

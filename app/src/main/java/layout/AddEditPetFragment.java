@@ -2,6 +2,8 @@ package layout;
 
 
 import android.app.Activity;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.Fragment;
@@ -34,6 +36,7 @@ import uan.electiva2.masocotas.entities.PetType;
 public class AddEditPetFragment extends Fragment {
 
     // TODO: Rename and change types of parameters
+    private String userId;
     private String petId;
     private FloatingActionButton saveButton;
     private PetManager petManager;
@@ -77,6 +80,9 @@ public class AddEditPetFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_add_edit_pet, container, false);
+
+        SharedPreferences sharedpreferences = getActivity().getSharedPreferences(Constants.MY_REFERENCES, Context.MODE_PRIVATE);
+        userId = sharedpreferences.getString(Constants.USER_ID,"0");
         saveButton = (FloatingActionButton) getActivity().findViewById(R.id.fab);
         petName = (EditText) root.findViewById(R.id.textPetName);
         petDescription = (EditText) root.findViewById(R.id.textDescription);
@@ -114,7 +120,7 @@ public class AddEditPetFragment extends Fragment {
         petDescription.setText(pet.getDescription());
         petType.setSelection(getIndexPetType(pet.getPetTypeId()));
         petSex.setSelection(getIndexSex(pet.getSex()));
-        petBirthDate.updateDate(pet.getBirthDate().getYear(),pet.getBirthDate().getMonth(),pet.getBirthDate().getDay());
+        petBirthDate.updateDate(pet.getBirthDate().getYear()+1900,pet.getBirthDate().getMonth(),pet.getBirthDate().getDay());
         petManager.close();
     }
 
@@ -141,9 +147,16 @@ public class AddEditPetFragment extends Fragment {
         if(petId!=null) {
             pet.setPetId(Integer.parseInt(petId));
         }
+        pet.setUserId(Integer.valueOf(userId));
         pet.setName(petName.getText().toString());
         pet.setDescription(petDescription.getText().toString());
-        pet.setBirthDate(new Date(petBirthDate.getYear(), petBirthDate.getMonth()+1,petBirthDate.getDayOfMonth()));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        String dateString=String.valueOf(petBirthDate.getYear())+"-"+String.valueOf(petBirthDate.getMonth())+"-"+String.valueOf(petBirthDate.getDayOfMonth());
+        try {
+            pet.setBirthDate(dateFormat.parse(dateString));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         PetType selectedPetType=(PetType)petType.getSelectedItem();
         if(selectedPetType !=null)
             pet.setPetTypeId(selectedPetType.getPetTypeId());

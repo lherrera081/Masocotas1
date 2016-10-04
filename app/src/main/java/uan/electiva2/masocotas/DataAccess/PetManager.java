@@ -48,7 +48,18 @@ public class PetManager implements Closeable {
         );
         return c;
     }
-
+    public Cursor getPetsByUser(String userId)throws SQLiteException {
+        Cursor c = dbHelper.getReadableDatabase().query(
+                PetContract.PetEntry.TABLE_NAME,  // Nombre de la tabla
+                petColumns,  // Lista de Columnas a consultar
+                PetContract.PetEntry.USER_ID + " = ?",  // Columnas para la cláusula WHERE
+                new String[]{ userId},  // Valores a comparar con las columnas del WHERE
+                null,  // Agrupar con GROUP BY
+                null,  // Condición HAVING para GROUP BY
+                null  // CláusulaW ORDER BY
+        );
+        return c;
+    }
     public Pet getPetById(String id) throws SQLiteException {
         Cursor c = dbHelper.getReadableDatabase().query(
                 PetContract.PetEntry.TABLE_NAME,  // Nombre de la tabla
@@ -96,8 +107,8 @@ public class PetManager implements Closeable {
     public PetType[] getPetTypes()throws SQLiteException {
         ArrayList<PetType> petTypes = new ArrayList<PetType>();
         Cursor cursor = dbHelper.getReadableDatabase().query(
-                PetContract.PetEntry.TABLE_NAME,  // Nombre de la tabla
-                petColumns,  // Lista de Columnas a consultar
+                PetTypeContract.PetTypeEntry.TABLE_NAME,  // Nombre de la tabla
+                null,  // Lista de Columnas a consultar
                 null,  // Columnas para la cláusula WHERE
                 null,  // Valores a comparar con las columnas del WHERE
                 null,  // Agrupar con GROUP BY
@@ -116,8 +127,8 @@ public class PetManager implements Closeable {
     public PetType getPetTypeById(int id)throws SQLiteException {
         PetType petType = null;
         Cursor cursor = dbHelper.getReadableDatabase().query(
-                PetContract.PetEntry.TABLE_NAME,  // Nombre de la tabla
-                petColumns,  // Lista de Columnas a consultar
+                PetTypeContract.PetTypeEntry.TABLE_NAME,  // Nombre de la tabla
+                null,  // Lista de Columnas a consultar
                 PetTypeContract.PetTypeEntry.PET_TYPE_ID + " = ?",  // Columnas para la cláusula WHERE
                 new String[]{ String.valueOf(id) },  // Valores a comparar con las columnas del WHERE
                 null,  // Agrupar con GROUP BY

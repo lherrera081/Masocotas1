@@ -41,7 +41,7 @@ public class Pet {
         }
         description= cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.DESCRIPTION));
         sex = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.SEX));
-        petTypeId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.PET_ID));
+        petTypeId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.PET_TYPE_ID));
         userId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.USER_ID));
     }
     public Pet(int userId, String name, Date birthDate, String description, String sex, int petTypeId, Bitmap photo){
