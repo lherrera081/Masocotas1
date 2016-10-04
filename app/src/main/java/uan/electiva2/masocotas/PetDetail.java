@@ -5,7 +5,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
+
+import layout.PetDetailFragment;
+import uan.electiva2.masocotas.entities.Constants;
 
 public class PetDetail extends AppCompatActivity {
 
@@ -15,14 +19,33 @@ public class PetDetail extends AppCompatActivity {
         setContentView(R.layout.activity_pet_detail);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        String id = getIntent().getStringExtra(Constants.PET_ID);
+        PetDetailFragment fragment = (PetDetailFragment)
+                getSupportFragmentManager().findFragmentById(R.id.pet_detail_container);
+        if (fragment == null) {
+            fragment = PetDetailFragment.newInstance(id);
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.pet_detail_container, fragment)
+                    .commit();
+        }
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_pet_detail, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
+
 }

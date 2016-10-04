@@ -32,6 +32,10 @@
         <activity
             android:name=".PetDetail"
             android:label="@string/title_activity_pet_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".AddEditPetActivity"
+            android:label="@string/title_activity_add_edit_pet"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

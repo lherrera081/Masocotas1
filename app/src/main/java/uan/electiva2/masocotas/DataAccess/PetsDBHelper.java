@@ -115,7 +115,7 @@ public class PetsDBHelper extends SQLiteOpenHelper {
         pet.setName("test");
         pet.setDescription("Test de test");
         pet.setPetTypeId((int)petTypeId);
-        pet.setSex("M");
+        pet.setSex("Masculino");
         pet.setBirthDate(new Date());
         sqLiteDatabase.insert(PetContract.PetEntry.TABLE_NAME, null,pet.toContentValues());
         {

@@ -1,9 +1,11 @@
 package uan.electiva2.masocotas.entities;
 
 import android.content.ContentValues;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 
 import java.io.ByteArrayOutputStream;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -27,6 +29,21 @@ public class Pet {
     private Bitmap photo;
 
     public Pet(){}
+    public Pet(Cursor cursor){
+        petId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.PET_ID));
+        name = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.NAME));
+        description = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.NAME));
+        SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        try {
+            birthDate = dateFormat.parse( cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.BIRTH_DATE)));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        description= cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.DESCRIPTION));
+        sex = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.SEX));
+        petTypeId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.PET_ID));
+        userId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.USER_ID));
+    }
     public Pet(int userId, String name, Date birthDate, String description, String sex, int petTypeId, Bitmap photo){
         this.userId=userId;
         this.name=name;
@@ -111,7 +128,8 @@ public class Pet {
 
     public ContentValues toContentValues() {
         ContentValues values = new ContentValues();
-        //values.put(PetContract.PetEntry.PET_ID, petId);
+        if(petId > 0)
+            values.put(PetContract.PetEntry.PET_ID, petId);
         values.put(PetContract.PetEntry.USER_ID, userId);
         values.put(PetContract.PetEntry.NAME, name);
         values.put(PetContract.PetEntry.SEX, sex);

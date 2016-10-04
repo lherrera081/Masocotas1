@@ -54,7 +54,6 @@ public class UserManager implements Closeable {
     }
 
     public User getUserByUsername(String userName) throws SQLiteException {
-        Cursor all = getAllUsers();
         Cursor c = dbHelper.getReadableDatabase().query(
                 UserContract.UserEntry.TABLE_NAME,  // Nombre de la tabla
                 null,  // Lista de Columnas a consultar
