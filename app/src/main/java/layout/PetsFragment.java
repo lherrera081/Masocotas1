@@ -37,9 +37,6 @@ public class PetsFragment extends Fragment {
 
     private CollapsingToolbarLayout mCollapsingView;
     private ImageView mAvatar;
-    private TextView mPhoneNumber;
-    private TextView mSpecialty;
-    private TextView mBio;
 
     private ListView petsList;
     private PetsCursorAdapter petsAdapter;
