@@ -2,6 +2,14 @@ package uan.electiva2.masocotas.Adapters;
 
 import android.content.Context;
 import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.Paint;
+import android.graphics.PorterDuff;
+import android.graphics.PorterDuffXfermode;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.support.v4.widget.CursorAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +23,7 @@ import java.util.Date;
 
 import uan.electiva2.masocotas.Contracts.PetContract;
 import uan.electiva2.masocotas.R;
+import uan.electiva2.masocotas.dummy.ImageConverter;
 
 /**
  * Created by lucho on 29/9/2016.
@@ -33,14 +42,14 @@ public class PetsCursorAdapter extends CursorAdapter {
     public void bindView(View view, Context context, Cursor cursor) {
         // Referencias UI.
         TextView nameText = (TextView) view.findViewById(R.id.tv_name);
-        final ImageView avatarImage = (ImageView) view.findViewById(R.id.iv_avatar);
+        final ImageView avatarImage = (ImageView) view.findViewById(R.id.list_avatar);
         TextView descriptionText = (TextView) view.findViewById(R.id.tv_description);
         TextView birthDateText = (TextView) view.findViewById(R.id.tv_birth_date);
 
         // Obtiene y asigna los valores.
         String name = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.NAME));
         String description = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.DESCRIPTION));
-        byte[] photo = cursor.getBlob(cursor.getColumnIndex(PetContract.PetEntry.PHOTO));
+        byte[] bitmapdata = cursor.getBlob(cursor.getColumnIndex(PetContract.PetEntry.PHOTO));
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         SimpleDateFormat outputDateFormat = new SimpleDateFormat("dd/MM/yyyy");
         try {
@@ -50,6 +59,11 @@ public class PetsCursorAdapter extends CursorAdapter {
             e.printStackTrace();
         }
         nameText.setText(name);
+        if(bitmapdata !=null) {
+            Bitmap circularBitmap = ImageConverter.getRoundedCornerBitmap(BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length),100 );
+            avatarImage.setImageBitmap(circularBitmap);
+        }
+
 //        Glide
 //                .with(context)
 //                .load(Uri.parse("file:///android_asset/" + avatarUri))
@@ -67,4 +81,8 @@ public class PetsCursorAdapter extends CursorAdapter {
 //                });
 
     }
+
+
 }
+
+

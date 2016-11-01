@@ -3,6 +3,7 @@ package uan.electiva2.masocotas.entities;
 import android.content.ContentValues;
 import android.database.Cursor;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 
 import java.io.ByteArrayOutputStream;
 import java.text.ParseException;
@@ -43,6 +44,10 @@ public class Pet {
         sex = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.SEX));
         petTypeId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.PET_TYPE_ID));
         userId = cursor.getInt(cursor.getColumnIndex(PetContract.PetEntry.USER_ID));
+        byte[] bitmapdata = cursor.getBlob(cursor.getColumnIndex(PetContract.PetEntry.PHOTO));
+        if(bitmapdata !=null) {
+            photo = BitmapFactory.decodeByteArray(bitmapdata, 0, bitmapdata.length);
+        }
     }
     public Pet(int userId, String name, Date birthDate, String description, String sex, int petTypeId, Bitmap photo){
         this.userId=userId;

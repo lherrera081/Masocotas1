@@ -14,7 +14,9 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import uan.electiva2.masocotas.Contracts.PetContract;
+import uan.electiva2.masocotas.Contracts.VaccineContract;
 import uan.electiva2.masocotas.R;
+import uan.electiva2.masocotas.entities.Vaccine;
 
 
 /**
@@ -38,9 +40,8 @@ public class VaccinesCursorAdapter extends CursorAdapter {
         TextView missingWeeks = (TextView) view.findViewById(R.id.tv_missing_weeks);
 
         // Obtiene y asigna los valores.
-        String name = cursor.getString(cursor.getColumnIndex(Va.NAME));
-        String description = cursor.getString(cursor.getColumnIndex(PetContract.PetEntry.DESCRIPTION));
+        String name = cursor.getString(cursor.getColumnIndex(VaccineContract.VaccineEntry.NAME));
+        String description = cursor.getString(cursor.getColumnIndex(VaccineContract.VaccineEntry.DESCRIPTION));
         nameText.setText(name);
-
     }
 }

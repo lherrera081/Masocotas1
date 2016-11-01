@@ -1,5 +1,8 @@
 package uan.electiva2.masocotas;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -11,7 +14,6 @@ import layout.AddEditPetFragment;
 import uan.electiva2.masocotas.entities.Constants;
 
 public class AddEditPetActivity extends AppCompatActivity {
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +31,6 @@ public class AddEditPetActivity extends AppCompatActivity {
                     .add(R.id.add_edit_pet_container, addEditLawyerFragment)
                     .commit();
         }
-
     }
 
 }

@@ -4,6 +4,7 @@ package layout;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
 
@@ -12,6 +13,7 @@ import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -38,6 +40,7 @@ public class PetDetailFragment extends Fragment {
     private TextView petSex;
     private TextView petType;
     private PetManager petManager;
+    private ImageView imageViewAvatar;
 
     public PetDetailFragment() {
         // Required empty public constructor
@@ -77,6 +80,7 @@ public class PetDetailFragment extends Fragment {
         petDescription = (TextView) root.findViewById(R.id.petDescriptionTextView);
         petSex = (TextView) root.findViewById(R.id.petSexTextView);
         petType = (TextView) root.findViewById(R.id.petTypeTextView);
+        imageViewAvatar =(ImageView) getActivity().findViewById(R.id.iv_avatar);
         petManager = new PetManager(getActivity());
         loadPet();
         petManager.close();
@@ -93,6 +97,11 @@ public class PetDetailFragment extends Fragment {
         petSex.setText(pet.getSex());
         if(pet.getPetType()!=null)
             petType.setText(pet.getPetType().getName());
+        Bitmap photo = pet.getPhoto();
+        if(photo != null) {
+            imageViewAvatar.setImageBitmap(photo);
+            imageViewAvatar.setScaleType(ImageView.ScaleType.CENTER_CROP);
+        }
         petManager.close();
     }
 
