@@ -9,6 +9,8 @@ import android.view.Menu;
 import android.view.View;
 
 import layout.PetDetailFragment;
+import layout.PetsFragment;
+import layout.VaccinesFragment;
 import uan.electiva2.masocotas.entities.Constants;
 
 public class PetDetail extends AppCompatActivity {
@@ -31,6 +33,16 @@ public class PetDetail extends AppCompatActivity {
                     .commit();
         }
 
+        VaccinesFragment vaccinesFragment = (VaccinesFragment)
+                getSupportFragmentManager().findFragmentById(R.id.vaccines_container);
+
+        if (vaccinesFragment == null) {
+            vaccinesFragment = new VaccinesFragment();
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .add(R.id.vaccines_container, vaccinesFragment)
+                    .commit();
+        }
 
     }
 

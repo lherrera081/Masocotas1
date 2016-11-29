@@ -30,8 +30,8 @@
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal" />
 
-            <ImageButton
-                android:layout_width="fill_parent"
+            <ImageView
+                android:layout_width="249dp"
                 android:layout_height="151dp"
                 android:id="@+id/photoImageButton"
                 android:src="@drawable/anonymous"

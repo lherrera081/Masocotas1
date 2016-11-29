@@ -35,12 +35,13 @@
                 android:id="@+id/fullNameTextView" />
         </LinearLayout>
 
-        <ImageButton
-            android:layout_width="149dp"
+        <ImageView
+            android:layout_width="249dp"
             android:layout_height="149dp"
             android:id="@+id/photoImageButton"
             android:src="@drawable/anonymous"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center"
+            android:scaleType="centerCrop"/>
 
         <TextView
             android:layout_width="wrap_content"

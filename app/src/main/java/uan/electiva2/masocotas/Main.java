@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import uan.electiva2.masocotas.DataAccess.UserManager;
@@ -16,7 +17,7 @@ import uan.electiva2.masocotas.entities.User;
 public class Main extends AppCompatActivity {
 
     /*Declaración de elementos de la actividad*/
-    ImageButton photoImageButton;
+    ImageView photoImageButton;
     TextView fullNameTextView;
     Button loadPetsButton;
     /*Fin de la declaración de elementos de la actividad*/
@@ -24,7 +25,7 @@ public class Main extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        photoImageButton = (ImageButton) findViewById(R.id.photoImageButton);
+        photoImageButton = (ImageView) findViewById(R.id.photoImageButton);
         fullNameTextView = (TextView)findViewById(R.id.fullNameTextView);
         loadPetsButton = (Button)findViewById(R.id.loadPetsButton);
         Intent intent = getIntent();

@@ -2,74 +2,94 @@
 <items version="2" >
 
     <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
         jumboMode="true"
+        optimize="true"
         revision="24.0.2"
-        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_007005a072036234f04a75efdc411b02b7a05032\classes.dex" />
+        sha1="08959016e252c15c7446e99d7c89c5cafc369b92">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_8c077fc73a13fc84d90d2351d21c7c8740efb47c\classes.dex" />
     </item>
     <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
         jumboMode="true"
-        revision="24.0.2"
-        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_0f9a4f2972ceb5164c38180c4ea3049dd2236560\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        revision="24.0.2"
-        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_4a9da43347edce120eb9c86690df74b826de19a1\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        revision="24.0.2"
-        sha1="202cd6612ff1d689448e08a000bc68921f805bad">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_5f8fcab7c21974396ab529573bc5254f14d5c2e8\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
-        jumboMode="true"
-        revision="24.0.2"
-        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_0a5cb0b8f3ac42886c5ea5ec58d4f45d02c81237\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="24.0.2"
-        sha1="3cec62c03b86e3b59ceb8cc118291f9c9e5d45bb">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_43f315115190e5fd5f7f3c12532cd51fec8bc790\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        revision="24.0.2"
-        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_cf6ed2b23413ff247f1d64d1433f81f484e116d4\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
-        jumboMode="true"
-        revision="24.0.2"
-        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_4cd3509c524377f48354ba024bb82d4a7cb2311e\classes.dex" />
-    </item>
-    <item
-        jar="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.4.0\jars\classes.jar"
-        jumboMode="true"
+        optimize="true"
         revision="24.0.2"
         sha1="de4db3785756bfb0915a9f59a9b3f2fea7407be4">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_c8c23930f49e5196139c4aa74a2b5f2040e4beb9\classes.dex" />
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-23.4.0_3f103fdb020eb5b0414e43be0990e90009dd2ab5\classes.dex" />
     </item>
     <item
-        jar="C:\Users\lucho\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\classes.jar"
         jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="67bd36ee9340ec7c254108936ad16b24bed160cc">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-23.4.0_7771f5313e927472f24bdc0da1a3e21b2b02bfcc\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="c2c594cace5d83a3227b2b6e658ecbfd586d3ed9">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-23.4.0_8e4e6bc15084a53ed8e07ab8ecb1de649c50c02a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\support-v4\23.4.0\jars\libs\internal_impl-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="ea3c07504d2c8f4b13aa17c45c1b68ed9c1c3674">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-23.4.0_9bd000a6c53430320ab58bf045a206d03aa81cdf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\design\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="5326d9a850d491714fef8cbfaa9ea3416f0bf0d2">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-design-23.4.0_2a78d37b547ba6c88ad6e6d2513d450b62ab813b\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="e8def204d17467d47726a4a49a82fa732ab359cc">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_da68e3dbc9791a3f46aa18cab4fba8f581fc467a\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="ec75036c3c52e451d0cde50a5aedaf5fd32354a0">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-recyclerview-v7-23.4.0_19ea89a22591170e1748780b0ee0f01a3d8517d5\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.4.0\jars\classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.2"
+        sha1="548f06de403a9409f00554b3ee12a9fdea0e236c">
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-23.4.0_881f71cb58f502c18072fe691a751263efb1e356\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Lucho\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\23.4.0\support-annotations-23.4.0.jar"
+        jumboMode="true"
+        optimize="true"
         revision="24.0.2"
         sha1="ffbe55fdb2bb456b1485831706a9eac3300bb6b8">
-        <dex dex="C:\Users\lucho\AndroidStudioProjects\Masocotas\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_477e40ad357fd89e3ffaab890853cdc161b7caff\classes.dex" />
+        <dex dex="C:\Users\Lucho\Documents\GitHub\Masocotas1\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-23.4.0_c832c77991041e29d72a240e0ad2816e9f3a47ca\classes.dex" />
     </item>
 
 </items>

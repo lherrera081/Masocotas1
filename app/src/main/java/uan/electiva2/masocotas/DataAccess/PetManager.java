@@ -148,6 +148,7 @@ public class PetManager implements Closeable {
 
     @Override
     public void close() {
-        dbHelper.close();
+
+        //dbHelper.close();
     }
 }

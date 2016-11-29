@@ -14,6 +14,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 
 import uan.electiva2.masocotas.DataAccess.UserManager;
 import uan.electiva2.masocotas.entities.LogicException;
@@ -28,7 +29,7 @@ public class Register extends AppCompatActivity {
     private EditText emailText;
     private EditText userText;
     private EditText passwordText;
-    ImageButton photoImageButton;
+    ImageView photoImageButton;
     Button registerButton;
     Intent cameraActivity;
     Bitmap photoBitmap;
@@ -43,7 +44,7 @@ public class Register extends AppCompatActivity {
         emailText = (EditText) findViewById(R.id.emailText);
         userText = (EditText) findViewById(R.id.userText);
         passwordText = (EditText) findViewById(R.id.passwordText);
-        photoImageButton = (ImageButton) findViewById(R.id.photoImageButton);
+        photoImageButton = (ImageView) findViewById(R.id.photoImageButton);
         registerButton = (Button) findViewById(R.id.registerButton);
         photoImageButton.setOnClickListener(new View.OnClickListener() {
             @Override

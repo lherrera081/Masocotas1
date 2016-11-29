@@ -29,7 +29,7 @@ public class VaccinesCursorAdapter extends CursorAdapter {
     @Override
     public View newView(Context context, Cursor cursor, ViewGroup viewGroup) {
         LayoutInflater inflater = LayoutInflater.from(context);
-        return inflater.inflate(R.layout.list_item_pet, viewGroup, false);
+        return inflater.inflate(R.layout.list_item_vaccine, viewGroup, false);
     }
 
     @Override
@@ -43,5 +43,7 @@ public class VaccinesCursorAdapter extends CursorAdapter {
         String name = cursor.getString(cursor.getColumnIndex(VaccineContract.VaccineEntry.NAME));
         String description = cursor.getString(cursor.getColumnIndex(VaccineContract.VaccineEntry.DESCRIPTION));
         nameText.setText(name);
+        ageInWeeksText.setText("Vacunar a las X semanas");
+        missingWeeks.setText("Faltan X semanas para la vacuna");
     }
 }
